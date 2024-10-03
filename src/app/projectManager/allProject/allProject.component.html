@@ -1,0 +1,74 @@
+<h2>All Projects</h2>
+<mat-card class="cardWithShadow">
+  <mat-card-content>
+    <mat-card-subtitle class="mat-body-1">
+      <div class="col-12 col-md-12 flex">
+        <div class="row">
+          <!-- New Projects Column -->
+          <div class="border-1 surface-border border-round w-15rem col-md-3" pDroppable (onDrop)="drop('new', $event)">
+            <h4 class="d-flex justify-content-center">New Project</h4>
+            <p class="d-flex justify-content-center">{{newProject.length + " Projects"}}</p>
+            <ul class="list-none flex flex-column gap-2 p-0 m-0">
+                <app-project 
+                  *ngFor="let product of newProject" 
+                  [project]="product"
+                  class="p-2 border-round shadow-1"
+                  pDraggable 
+                  (onDragStart)="dragStart(product)" 
+                  (onDragEnd)="dragEnd()">
+                </app-project>
+            </ul>
+          </div>
+
+          <!-- Running Projects Column -->
+          <div class="border-1 surface-border border-round w-15rem col-md-3" pDroppable (onDrop)="drop('running', $event)">
+            <h4 class="d-flex justify-content-center">Running</h4>
+            <p class="d-flex justify-content-center">{{runningProject.length + " Projects"}}</p>
+            <ul class="list-none flex flex-column gap-2 p-0 m-0" >
+                <app-project 
+                    *ngFor="let product of runningProject" 
+                    [project]="product" 
+                    class="p-2 border-round shadow-1"
+                    pDraggable 
+                    (onDragStart)="dragStart(product)" 
+                    (onDragEnd)="dragEnd()">
+                </app-project>
+            </ul>
+          </div>
+
+          <!-- On Hold Column -->
+          <div class="border-1 surface-border border-round w-15rem col-md-3" pDroppable (onDrop)="drop('onHold', $event)">
+            <h4 class="d-flex justify-content-center">On Hold</h4>
+            <p class="d-flex justify-content-center">{{onHoldProject.length + " Projects"}}</p>
+            <ul class="list-none flex flex-column gap-2 p-0 m-0" >
+                <app-project 
+                    *ngFor="let product of onHoldProject" 
+                    [project]="product" 
+                    class="p-2 border-round shadow-1"
+                    pDraggable 
+                    (onDragStart)="dragStart(product)" 
+                    (onDragEnd)="dragEnd()">
+                </app-project>
+            </ul>
+          </div>
+
+          <!-- Finished Column -->
+          <div class="border-1 surface-border border-round w-15rem col-md-3" pDroppable (onDrop)="drop('finished', $event)">
+            <h4 class="d-flex justify-content-center">Finished</h4>
+            <p class="d-flex justify-content-center">{{finishedProject.length + " Projects"}}</p>
+            <ul class="list-none flex flex-column gap-2 p-0 m-0" >
+                <app-project 
+                    *ngFor="let product of finishedProject" 
+                    [project]="product" 
+                    class="p-2 border-round shadow-1"
+                    pDraggable 
+                    (onDragStart)="dragStart(product)" 
+                    (onDragEnd)="dragEnd()">
+                </app-project>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </mat-card-subtitle>
+  </mat-card-content>
+</mat-card>

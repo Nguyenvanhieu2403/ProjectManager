@@ -1,0 +1,457 @@
+<mat-toolbar class="topbar">
+  <!-- Mobile Menu -->
+  <!-- @if(!showToggle) {
+  <button
+    mat-mini-fab
+    color="inherit"
+    (click)="toggleMobileNav.emit()"
+    class="d-flex justify-content-center"
+  >
+    <i
+      class="iconify icon-20 d-flex"
+      data-icon="solar:hamburger-menu-line-duotone"
+    ></i>
+  </button>
+  } -->
+
+  <button
+    mat-mini-fab
+    color="inherit"
+    (click)="toggleMobileNav.emit()"
+    class="d-flex justify-content-center"
+  >
+    <i
+      class="iconify icon-20 d-flex"
+      data-icon="solar:hamburger-menu-line-duotone"
+    ></i>
+  </button>
+  <span class="flex-1-auto"></span>
+
+  <!-- --------------------------------------------------------------- -->
+  <!-- Notification Dropdown -->
+  <!-- --------------------------------------------------------------- -->
+  <button
+    mat-mini-fab
+    [matMenuTriggerFor]="notifications"
+    color="inherit"
+    aria-label="Notifications"
+    class="d-flex justify-content-center"
+  >
+    <span matBadge="1" matBadgeOverlap="false" matBadgeSize="small">
+      <i class="iconify icon-20 d-flex" data-icon="solar:bell-line-duotone"></i>
+    </span>
+  </button>
+
+  <button
+    mat-mini-fab=""
+    [matMenuTriggerFor]="languages"
+    color="inherit"
+    class="mat-mdc-menu-trigger mdc-fab mdc-fab--mini mat-mdc-mini-fab mat-inherit mat-mdc-button-base"
+    mat-ripple-loader-class-name="mat-mdc-button-ripple"
+    aria-haspopup="menu"
+    aria-expanded="false"
+  >
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple"></span
+    ><span class="mdc-button__label"
+      ><img
+        class="rounded-circle object-cover icon-20 m-t-4"
+        src="{{flag.icon}}" /></span
+    ><span class="mat-mdc-focus-indicator"></span
+    ><span class="mat-mdc-button-touch-target"></span
+    ><span class="mat-ripple mat-mdc-button-ripple"></span>
+  </button>
+
+  <!-- <a href="#" target="_blank" mat-flat-button color="primary">Download Free</a> -->
+
+  <!-- --------------------------------------------------------------- -->
+  <!-- profile Dropdown -->
+  <!-- --------------------------------------------------------------- -->
+  <!-- <button
+    mat-fab
+    extended
+    color="inherit"
+    [matMenuTriggerFor]="profilemenu"
+    aria-label="Notifications"
+    class="d-flex justify-content-center gap-4 profile-btn-dd"
+  >
+    <img
+      src="/assets/images/profile/user-1.jpg"
+      class="rounded-circle object-cover icon-35 profile-dd"
+      width="35"
+    />
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+      aria-hidden="true" role="img" class="iconify iconify--solar f-s-8" 
+      width="1em" height="1em" 
+      preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="solar:alt-arrow-down-bold">
+      <path fill="currentColor" d="m12.37 15.835l6.43-6.63C19.201 8.79 18.958 8 18.43 8H5.57c-.528 0-.771.79-.37 1.205l6.43 6.63c.213.22.527.22.74 0">
+      </path>
+    </svg>
+  </button> -->
+  <button
+    mat-fab=""
+    extended=""
+    color="inherit"
+    aria-label="Thông báo"
+    [matMenuTriggerFor]="profilemenu"
+    class="mat-mdc-menu-trigger d-flex justify-content-center profile-btn-dd mdc-fab mat-mdc-fab mat-inherit mat-mdc-button-base mdc-fab--extended mat-mdc-extended-fab __web-inspector-hide-shortcut__"
+    mat-ripple-loader-class-name="mat-mdc-button-ripple"
+    aria-haspopup="menu"
+    aria-expanded="false"
+  >
+    <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple"></span>
+    <span class="mdc-button__label">
+      <div class="d-flex align-items-center gap-4">
+        <img
+          src="/assets/images/profile/user-1.jpg"
+          width="35"
+          class="rounded-circle object-cover icon-35 profile-dd"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          aria-hidden="true"
+          role="img"
+          class="iconify iconify--solar f-s-8"
+          width="1em"
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+          data-icon="solar:alt-arrow-down-bold"
+        >
+          <path
+            fill="currentColor"
+            d="m12.37 15.835l6.43-6.63C19.201 8.79 18.958 8 18.43 8H5.57c-.528 0-.771.79-.37 1.205l6.43 6.63c.213.22.527.22.74 0"
+          ></path>
+        </svg>
+      </div>
+    </span>
+    <span class="mat-mdc-focus-indicator"></span
+    ><span class="mat-mdc-button-touch-target"></span
+    ><span class="mat-ripple mat-mdc-button-ripple"></span>
+  </button>
+  <!-- Information User -->
+  <mat-menu #profilemenu="matMenu" class="topbar-dd cardWithShadow">
+    <div class="mat-mdc-menu-content">
+      <div class="p-x-32 p-y-16">
+        <div class="d-flex align-items-center p-b-24 b-b-1 m-t-16">
+          <img
+            src="/assets/images/profile/user-1.jpg"
+            width="56"
+            class="rounded-circle"
+          />
+          <div class="m-l-16">
+            <h6
+              class="f-s-14 f-w-600 m-0 mat-subtitle-1 d-flex align-items-center"
+            >
+              David McMichael
+              <span class="f-s-14 d-block text-success m-l-4">Pro</span>
+            </h6>
+            <span> davidwrappixel.com </span>
+          </div>
+        </div>
+      </div>
+      <div class="p-x-32 p-b-16">
+        <a class="p-8 text-decoration-none d-block text-hover-primary" href="/core/myprofile"
+          ><div class="d-flex align-items-center">
+            <h5
+              class="f-s-14 f-w-600 m-0 textprimary mat-subtitle-1 hover-text"
+            >
+              My Profile
+            </h5>
+            <!---->
+          </div></a
+        ><a class="p-8 text-decoration-none d-block text-hover-primary" href="/"
+          ><div class="d-flex align-items-center">
+            <h5
+              class="f-s-14 f-w-600 m-0 textprimary mat-subtitle-1 hover-text"
+            >
+              My Subscription
+            </h5>
+            <!---->
+          </div></a
+        ><a class="p-8 text-decoration-none d-block text-hover-primary" href="/"
+          ><div class="d-flex align-items-center">
+            <h5
+              class="f-s-14 f-w-600 m-0 textprimary mat-subtitle-1 hover-text"
+            >
+              My Invoice
+            </h5>
+            <span
+              class="bg-light-error text-error rounded-sm p-x-8 p-y-4 f-w-500 f-s-12 m-l-4"
+              >5</span
+            ><!---->
+          </div></a
+        ><a class="p-8 text-decoration-none d-block text-hover-primary" href="/"
+          ><div class="d-flex align-items-center">
+            <h5
+              class="f-s-14 f-w-600 m-0 textprimary mat-subtitle-1 hover-text"
+            >
+              Account Settings
+            </h5>
+            <!---->
+          </div></a
+        ><a
+          class="p-8 text-decoration-none d-block text-hover-primary"
+          href="/authentication/login"
+          ><div class="d-flex align-items-center">
+            <h5
+              class="f-s-14 f-w-600 m-0 textprimary mat-subtitle-1 hover-text"
+            >
+              Sign Out
+            </h5>
+            <!---->
+          </div></a
+        ><!---->
+      </div>
+    </div>
+  </mat-menu>
+  <!-- Language -->
+  <mat-menu #languages="matMenu" class="topbar-dd cardWithShadow">
+    <button
+      mat-menu-item=""
+      class="mat-mdc-menu-item mat-mdc-focus-indicator ng-tns-c1923052698-5 ng-star-inserted"
+      role="menuitem"
+      tabindex="0"
+      aria-disabled="false"
+      style=""
+      *ngFor="let item of flags"
+      (click)="changeLanguage(item)"
+    >
+      <span class="mat-mdc-menu-item-text"
+        ><div class="d-flex align-items-center">
+          <img
+            class="rounded-circle object-cover m-r-8 icon-20"
+            src="{{item.icon}}"
+          /><span class="mat-subtitle-1 f-s-14">{{item.name}}</span>
+        </div></span
+      >
+      <div matripple="" class="mat-ripple mat-mdc-menu-ripple"></div>
+      <!---->
+    </button>
+  </mat-menu>
+  <!-- Notifications -->
+  <mat-menu
+    #notifications="matMenu"
+    class="topbar-dd cardWithShadow notifications-dropdown"
+  >
+    <div class="d-flex align-items-center p-x-32 p-y-16">
+      <h6 class="f-s-16 f-w-600 m-0 mat-subtitle-1">Notifications</h6>
+      <span class="m-l-auto"
+        ><span class="bg-primary text-white p-x-8 p-y-4 f-w-500 rounded f-s-12"
+          >5 new</span
+        ></span
+      >
+    </div>
+    <button
+      mat-menu-item=""
+      class="mat-mdc-menu-item mat-mdc-focus-indicator p-x-30 p-y-12 ng-star-inserted"
+      role="menuitem"
+      tabindex="0"
+      aria-disabled="false"
+      style=""
+    >
+      <span class="mat-mdc-menu-item-text"
+        ><div class="d-flex align-items-center">
+          <span
+            class="align-items-center bg-light-primary d-flex flex-shrink-0 icon-48 justify-content-center rounded-circle text-primary"
+            ><i-tabler class="icon-20 d-flex" _nghost-ng-c2605515766=""
+              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16 21h3c.81 0 1.48 -.67 1.48 -1.48l.02 -.02c0 -.82 -.69 -1.5 -1.5 -1.5h-3v3z"
+                ></path>
+                <path
+                  d="M16 15h2.5c.84 -.01 1.5 .66 1.5 1.5s-.66 1.5 -1.5 1.5h-2.5v-3z"
+                ></path>
+                <path d="M4 9v-4c0 -1.036 .895 -2 2 -2s2 .964 2 2v4"></path>
+                <path d="M2.99 11.98a9 9 0 0 0 9 9m9 -9a9 9 0 0 0 -9 -9"></path>
+                <path d="M8 7h-4"></path>
+              </svg> </i-tabler
+          ></span>
+          <div class="m-l-16 w-100">
+            <div
+              class="d-flex align-items-center justify-content-between w-100"
+            >
+              <h5 class="f-s-14 f-w-600 m-0 mat-subtitle-1">Launch Admin</h5>
+              <span class="d-block f-s-12 m-l-auto"> 8:30 AM</span>
+            </div>
+            <span class="d-block text-truncate f-s-12 w-75"
+              >Just see the my new admin!</span
+            >
+          </div>
+        </div></span
+      >
+      <div matripple="" class="mat-ripple mat-mdc-menu-ripple"></div>
+      <!----></button
+    ><button
+      mat-menu-item=""
+      class="mat-mdc-menu-item mat-mdc-focus-indicator p-x-30 p-y-12 ng-star-inserted"
+      role="menuitem"
+      tabindex="0"
+      aria-disabled="false"
+      style=""
+    >
+      <span class="mat-mdc-menu-item-text"
+        ><div class="d-flex align-items-center">
+          <span
+            class="align-items-center bg-light-accent d-flex flex-shrink-0 icon-48 justify-content-center rounded-circle text-accent"
+            ><i-tabler class="icon-20 d-flex" _nghost-ng-c2605515766=""
+              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"
+                ></path>
+                <path d="M16 3v4"></path>
+                <path d="M8 3v4"></path>
+                <path d="M4 11h16"></path>
+                <path d="M11 15h1"></path>
+                <path d="M12 15v3"></path>
+              </svg> </i-tabler
+          ></span>
+          <div class="m-l-16 w-100">
+            <div
+              class="d-flex align-items-center justify-content-between w-100"
+            >
+              <h5 class="f-s-14 f-w-600 m-0 mat-subtitle-1">Event today</h5>
+              <span class="d-block f-s-12 m-l-auto"> 8:21 AM</span>
+            </div>
+            <span class="d-block text-truncate f-s-12 w-75"
+              >Just a reminder that you have event</span
+            >
+          </div>
+        </div></span
+      >
+      <div matripple="" class="mat-ripple mat-mdc-menu-ripple"></div>
+      <!----></button
+    ><button
+      mat-menu-item=""
+      class="mat-mdc-menu-item mat-mdc-focus-indicator p-x-30 p-y-12 ng-star-inserted"
+      role="menuitem"
+      tabindex="0"
+      aria-disabled="false"
+      style=""
+    >
+      <span class="mat-mdc-menu-item-text"
+        ><div class="d-flex align-items-center">
+          <span
+            class="align-items-center bg-light-warning d-flex flex-shrink-0 icon-48 justify-content-center rounded-circle text-warning"
+            ><i-tabler class="icon-20 d-flex" _nghost-ng-c2605515766=""
+              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"
+                ></path>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+              </svg> </i-tabler
+          ></span>
+          <div class="m-l-16 w-100">
+            <div
+              class="d-flex align-items-center justify-content-between w-100"
+            >
+              <h5 class="f-s-14 f-w-600 m-0 mat-subtitle-1">Settings</h5>
+              <span class="d-block f-s-12 m-l-auto"> 8:05 AM</span>
+            </div>
+            <span class="d-block text-truncate f-s-12 w-75"
+              >You can customize this template</span
+            >
+          </div>
+        </div></span
+      >
+      <div matripple="" class="mat-ripple mat-mdc-menu-ripple"></div>
+      <!----></button
+    ><button
+      mat-menu-item=""
+      class="mat-mdc-menu-item mat-mdc-focus-indicator p-x-30 p-y-12 ng-star-inserted"
+      role="menuitem"
+      tabindex="0"
+      aria-disabled="false"
+      style=""
+    >
+      <span class="mat-mdc-menu-item-text"
+        ><div class="d-flex align-items-center">
+          <span
+            class="align-items-center bg-light-success d-flex flex-shrink-0 icon-48 justify-content-center rounded-circle text-success"
+            ><i-tabler class="icon-20 d-flex" _nghost-ng-c2605515766=""
+              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16 21h3c.81 0 1.48 -.67 1.48 -1.48l.02 -.02c0 -.82 -.69 -1.5 -1.5 -1.5h-3v3z"
+                ></path>
+                <path
+                  d="M16 15h2.5c.84 -.01 1.5 .66 1.5 1.5s-.66 1.5 -1.5 1.5h-2.5v-3z"
+                ></path>
+                <path d="M4 9v-4c0 -1.036 .895 -2 2 -2s2 .964 2 2v4"></path>
+                <path d="M2.99 11.98a9 9 0 0 0 9 9m9 -9a9 9 0 0 0 -9 -9"></path>
+                <path d="M8 7h-4"></path>
+              </svg> </i-tabler
+          ></span>
+          <div class="m-l-16 w-100">
+            <div
+              class="d-flex align-items-center justify-content-between w-100"
+            >
+              <h5 class="f-s-14 f-w-600 m-0 mat-subtitle-1">
+                Launch Templates
+              </h5>
+              <span class="d-block f-s-12 m-l-auto"> 7:30 AM</span>
+            </div>
+            <span class="d-block text-truncate f-s-12 w-75"
+              >Just see the my new admin!</span
+            >
+          </div>
+        </div></span
+      >
+      <div matripple="" class="mat-ripple mat-mdc-menu-ripple"></div>
+      <!----></button
+    ><button
+      mat-menu-item=""
+      class="mat-mdc-menu-item mat-mdc-focus-indicator p-x-30 p-y-12 ng-star-inserted"
+      role="menuitem"
+      tabindex="0"
+      aria-disabled="false"
+      style=""
+    >
+      <span class="mat-mdc-menu-item-text"
+        ><div class="d-flex align-items-center">
+          <span
+            class="align-items-center bg-light-error d-flex flex-shrink-0 icon-48 justify-content-center rounded-circle text-error"
+            ><i-tabler class="icon-20 d-flex" _nghost-ng-c2605515766=""
+              ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                <path d="M12 9v4"></path>
+                <path d="M12 16v.01"></path>
+              </svg> </i-tabler
+          ></span>
+          <div class="m-l-16 w-100">
+            <div
+              class="d-flex align-items-center justify-content-between w-100"
+            >
+              <h5 class="f-s-14 f-w-600 m-0 mat-subtitle-1">Event tomorrow</h5>
+              <span class="d-block f-s-12 m-l-auto"> 7:03 AM</span>
+            </div>
+            <span class="d-block text-truncate f-s-12 w-75"
+              >Just a reminder that you have event</span
+            >
+          </div>
+        </div></span
+      >
+      <div matripple="" class="mat-ripple mat-mdc-menu-ripple"></div>
+      <!----></button
+    ><!---->
+    <div class="p-y-12 p-x-32">
+      <button
+        mat-flat-button=""
+        color="primary"
+        class="w-100 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-primary mat-mdc-button-base"
+        mat-ripple-loader-class-name="mat-mdc-button-ripple"
+      >
+        <span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span
+        ><span class="mdc-button__label"> See all notifications </span
+        ><span class="mat-mdc-focus-indicator"></span
+        ><span class="mat-mdc-button-touch-target"></span
+        ><span class="mat-ripple mat-mdc-button-ripple"></span>
+      </button>
+    </div>
+  </mat-menu>
+</mat-toolbar>

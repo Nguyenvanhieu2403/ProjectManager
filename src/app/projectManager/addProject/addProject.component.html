@@ -1,0 +1,144 @@
+<h2>Add Projects</h2>
+<mat-card class="cardWithShadow">
+  <mat-card-content>
+    <form>
+      <div class="row">
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-label class="f-w-600 m-b-8 d-block">Project ID</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="your name " />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Project Title</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="your name " />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-label class="f-w-600 m-b-8 d-block">Department</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput type="email" placeholder="your email" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Project Priority</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="your name " />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <!-- input -->
+          <mat-label class="f-w-600 m-b-8 d-block">Client</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput type="text" placeholder="your password" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Price</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="your name " />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Project Start Date</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="your name " />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Project End Date</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="your name " />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-label class="f-w-600 m-b-8 d-block">Team</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="your name " />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-label class="f-w-600 m-b-8 d-block d-flex ">
+            <div class="m-3">Work Status:</div>
+            <div class="d-flex flex-wrap gap-3">
+              <div class="d-flex align-items-center m-3">
+                  <p-radioButton 
+                      name="Active" 
+                      value="active" 
+                      [(ngModel)]="ingredient" 
+                      inputId="ingredient1" />
+                  <label for="ingredient1" class="ml-2">
+                    Active
+                  </label>
+              </div>
+              <div class="d-flex align-items-center m-3">
+                  <p-radioButton 
+                      name="Completed" 
+                      value="Completed" 
+                      [(ngModel)]="ingredient" 
+                      inputId="ingredient2" />
+                  <label for="ingredient2" class="ml-2">
+                    Completed
+                  </label>
+              </div>
+              <div class="d-flex align-items-center m-3">
+                  <p-radioButton 
+                      name="Running" 
+                      value="Running" 
+                      [(ngModel)]="ingredient" 
+                      inputId="ingredient3" />
+                  <label for="ingredient3" class="ml-2">
+                    Running
+                  </label>
+              </div>
+              <div class="d-flex align-items-center m-3">
+                  <p-radioButton 
+                      name="Pending" 
+                      value="Pending" 
+                      [(ngModel)]="ingredient" 
+                      inputId="ingredient4" />
+                  <label for="ingredient4" class="ml-2">
+                    Pending
+                  </label>
+              </div>
+              <div class="d-flex align-items-center m-3">
+                <p-radioButton 
+                    name="Not Started" 
+                    value="Not Started" 
+                    [(ngModel)]="ingredient" 
+                    inputId="ingredient4" />
+                <label for="ingredient4" class="ml-2">
+                  Not Started
+                </label>
+              </div>
+            <div class="d-flex align-items-center m-3">
+              <p-radioButton 
+                  name="Cancled" 
+                  value="Cancled" 
+                  [(ngModel)]="ingredient" 
+                  inputId="ingredient4" />
+              <label for="ingredient4" class="ml-2">
+                Cancled
+              </label>
+            </div>
+            </div>  
+          </mat-label>
+        </div>
+        <div class="col-lg-12">
+          <mat-label class="f-w-600 m-b-8 d-block">Descriptions:</mat-label>
+          <div class="card">
+            <p-editor [(ngModel)]="text" [style]="{ height: '320px' }" />
+        </div>
+        </div>
+      </div>
+
+      <div class="m-t-12">
+        <button mat-flat-button color="primary" class="m-r-8">Submit</button>
+        <button mat-stroked-button color="warn">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

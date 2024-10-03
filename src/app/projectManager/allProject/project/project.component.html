@@ -1,0 +1,92 @@
+<li class="cdk-drag project ng-star-inserted">
+  <h6 class="project-title">
+    <strong>
+      <span class="pi pi-check-circle"></span>
+      {{ project.name }}
+    </strong>
+  </h6>
+  <div class="d-flex justify-content-between">
+    <small class="block text-ellipsis">
+      <span class="text-xs"><strong>{{project.task}}</strong></span>
+      <span class="text-muted">
+        open tasks
+      </span>
+    </small>
+    <span class="project-bedge" [ngStyle]="{
+      'background-color': project.type[0].typeId === 1 ? 'red' : 
+                         project.type[0].typeId === 2 ? '#1075f2' : 
+                         project.type[0].typeId === 3 ? '#06a800' : '#110103',
+        'color': 'white',
+        'border-radius': '5px',
+    }">
+      <div class="pro-left" style="padding: 0 10px; border-radius: 5px;">
+        {{project.type[0].typeName}}
+      </div>
+    </span>
+  </div>
+  <p class="mt-3">
+    {{project.description}}
+  </p>
+  <div class="project-members m-b-15">
+    <ul class="team-members" style="list-style: none; padding: 0;">
+      <li class="dropdown avatar-dropdown">
+        <div class="row">
+          <div class="col-5 pro-left mb-2 font-weight-bold">Created:</div>
+          <div class="col-7 pro-left mb-2 font-weight-bold">
+            <span class="pi pi-calendar"></span>{{project.createDate}}
+          </div>
+          <div class="col-5 pro-left mb-2 font-weight-bold">Team Leader:</div>
+          <div class="col-7 pro-left mb-2 font-weight-bold">
+            {{project.leadTeam}}
+          </div>
+          <div class="col-5 pro-left mb-2 font-weight-bold">Priority:</div>
+          <div class="col-7 mb-2 pro-lef font-weight-bold">
+            <span *ngIf="project.priority === 1" style="color: #910d0d;">
+              <span class="pi pi-angle-double-up"></span>
+              <strong> High</strong>
+            </span>
+            <span *ngIf="project.priority === 2" style="color: #e900e9;">
+              <span class="pi pi-arrows-h"></span>
+              <strong> Medium</strong>
+            </span>
+            <span *ngIf="project.priority !== 1 && project.priority !== 2" style="color: #00da00;">
+              <span class="pi pi-angle-double-down"></span>
+              <strong> Low</strong>
+            </span>
+          </div>
+          <div class="col-5 pro-left mb-2 font-weight-bold">Deadline:</div>
+          <div class="col-7 pro-left mb-2 font-weight-bold">
+            <div class="deadline ng-star-inserted">
+              <span class="pi pi-calendar"></span>
+              {{project.deadLine}}
+            </div>
+          </div>
+          <div class="col-5 pro-left mb-2 font-weight-bold">Comments:</div>
+          <div class="col-7 pro-left mb-2 font-weight-bold">{{project.comments}}</div>
+          <div class="col-5 pro-left mb-2 font-weight-bold">Bug:</div>
+          <div class="col-7 pro-left mb-2 font-weight-bold">{{project.bug}}</div>
+          <div class="col-5 pro-left mb-2 font-weight-bold">Team:</div>
+          <div class="col-7 pro-left">
+            <p-avatarGroup styleClass="mb-3">
+              <p-avatar *ngFor="let member of project.teams.slice(0, 3)"
+                  image="{{member.avatar}}" 
+                  shape="circle" />
+              <p-avatar 
+                  *ngIf="project.teams.length > 3"
+                  label="+{{ project.teams.length - 3 }}" 
+                  shape="circle"
+                  [style]="{ 'background-color': '#9c27b0', color: '#ffffff' }" />
+            </p-avatarGroup>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <p class="m-b-5 d-flex justify-content-between">
+    Progress
+    <span class="text-success float-end">{{project.process}}%</span>
+  </p>
+  <div class="progress progress-xs mb-0">
+    <p-progressBar [value]="50" />
+  </div>
+</li>
