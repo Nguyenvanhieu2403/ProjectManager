@@ -18,6 +18,10 @@ import { SpeedDialModule } from 'primeng/speeddial';
 import { AddProjectComponent } from './addProject/addProject.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { EditorModule } from 'primeng/editor';
+import { UploadImageComponent } from '../components/uploadImage/uploadImage.component';
+import { ToastModule } from 'primeng/toast';
+import { FileUploadModule } from 'primeng/fileupload';
+import { BadgeModule } from 'primeng/badge';
 
 @NgModule({
   imports: [
@@ -38,11 +42,15 @@ import { EditorModule } from 'primeng/editor';
     SpeedDialModule,
     RadioButtonModule,
     EditorModule,
+    ToastModule,
+    FileUploadModule,
+    BadgeModule
   ],
   declarations: [
     AllProjectComponent,
     ProjectComponent,
     AddProjectComponent,
+    UploadImageComponent
   ]
 })
 export class ProjectManagerModule { }

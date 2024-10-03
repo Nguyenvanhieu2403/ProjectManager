@@ -127,11 +127,17 @@
             </div>  
           </mat-label>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 m-4">
           <mat-label class="f-w-600 m-b-8 d-block">Descriptions:</mat-label>
           <div class="card">
             <p-editor [(ngModel)]="text" [style]="{ height: '320px' }" />
+          </div>
         </div>
+        <div class="col-lg-12 m-4">
+          <mat-label class="f-w-600 m-b-8 d-block">Upload Image:</mat-label>
+          <div class="card">
+            <app-uploadImage></app-uploadImage>
+          </div>
         </div>
       </div>
 
